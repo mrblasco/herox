@@ -6,6 +6,7 @@
 
 # Data files
 file <- "../Data/all_users.csv"
+# file <- "../Data/HeroX Users_15March2017.csv"
 raw.df <- read.csv(file, stringsAsFactors=FALSE)
 
 # Functions to match name and gender
@@ -15,13 +16,16 @@ source("gender_func.R")
 correct_data <- function(raw.df) {
 	df.challenge <- raw.df[, 17:ncol(raw.df)]
 	df <- raw.df[, 1:17]
+# 	df <- raw.df[, 1:24]
 	df$userID <- 1:nrow(df)
+	df$First.name<- iconv(enc2utf8(df$First.name),sub="byte")
 	df$Gender <- genderize(df$First.name)
 	df$Gender2 <- genderize.multi(df$First.name)
 	df$Gender[is.na(df$Gender)] <- df$Gender2[is.na(df$Gender)]
 	df$Gender <- factor(df$Gender)
 	df$Country <- factor(as.character(df$Country), exclude="")
 	df$Referer <- factor(gsub("https?://([^/]+)/?.*", "\\1", df$Referer), exclude='')
+# 	df$Bio<- iconv(e	nc2utf8(df$Bio), sub="byte")
 	df$Bio.nchar <- nchar(df$Bio)
 	df$Facebook.yes <- nchar(df$Facebook)>0
 	df$Google.yes <- nchar(df$Google)>0
@@ -47,6 +51,7 @@ consistent_data <- function(df) {
 	df$Location <- NULL
 	df$Email <- NULL 
 	df$Bio <- NULL
+	df$Affiliation <- NULL
 	df$Facebook <- NULL
 	df$Google. <- NULL
 	df$Twitter <- NULL
@@ -61,7 +66,6 @@ prepare_data <- function(raw.df, genderize=FALSE) {
 # Do everything 
 df <- prepare_data(raw.df)
 summary(df)
-
 
 # What predicts registration ? 
 sapply(df, function(x) {
@@ -78,10 +82,11 @@ sapply(df, function(x) {
 save(df, file="herox.RData")
 
 # PLOT Gender imbalance!
+# par(mar=c(4,4,1,1))
 # df$male <- df$Gender=="male"
 # tab <- table(ifelse(df$Num.challenges>0,"participating", "not participating"), ifelse(df$male,"male","female"))
 # barplot(prop.table(tab, 2), beside=T, legend=T, ylim=c(0, 0.8))
-
+# 
 # 
 #  [1] "First.name"                            
 #  [2] "Last.name"                             
