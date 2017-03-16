@@ -1,0 +1,231 @@
+% Gender difference in competition and participation in online platforms
+% Harvard Crowd Innovation Lab collaboration with HeroX
+% \today
+
+
+HeroX snapshot November 2016
+==============================
+
+```{r, echo=FALSE}
+c("Marketing Nurture Track Stage"=1184
+  , "Lead Qualification Stage"=312
+  , "Challenge Goals Workshop"=116
+  , "Proposal Review Stage"=13
+  , "Contract Negotiation Stage (Full Service)"=3)
+```
+
+
+All users
+================
+
+```{r, echo=FALSE}
+dat <- read.csv("Data/all_users.csv", quote='\"')
+d <- as.Date((dat$Registration.date))
+plot(y=1:length(d), sort(d), xlab="Time", ylab="Registered users", type='l')
+```
+
+
+Solicitation experiment
+==========================
+
+Measures of participation
+
+- Clickthrough rates
+- Registration, efforts, etc.
+
+Gender and economic outcomes
+    - Overconfidence
+    - Self-stereotyping
+
+- Collaboration
+- Mixed or not seems to matter
+- Overconfidence of men seems to matter
+- Self-stereotypes
+
+
+- Collaboration vs competition
+    + Join a team to solve this problem
+    + Enter the competition to solve this problem
+
+Preliminary
+================
+
+- Sampling from distribution very specific
+    + use external outreach to check
+
+- Select a challenge or more than one?
+
+Research question
+=======================
+
+How economic outcomes are affected by the gender composition in a contest?
+
+Potential outcomes
+=====================
+
+- women do X | signal competition is mixed
+- women do X | signal competition is not mixed, same gender
+- women do X | signal competition is not mixed, different gender
+
+Solicitation
+=====================
+
+- Send solicitation emails 
+- Pictures of past winners manipulating gender
+    + Affects mixed vs not
+    + Affects prob. of winning (overconfidence)
+
+Treatment: % of women in the pictures
+
+Treatment levels
+- 3 pictures women  (100%)
+- 1 picture men 2 women (66%)
+- 1 pictute women 2 men (33%)
+- 3 pictures men (0%)
+
+Outcomes:
+  + Click through
+  + Platform activity
+  
+Second stage intervention
+===========================
+
+Subjects: Subset who made the click / shown interest
+
+Intervention: suggestions for teams (or competition)?
+
+Research question
+=========================
+
+Demand for crowdsourcing contests
+- Grant experiment with ideation tasks
+
+Subjects:   
+    + Startups --> do they open up? need resources
+    + Social enterprise --> don't care about money?
+
+Potential outcomes
+========================
+
+Apply | treatment
+Apply | control
+
+
+Preliminaries
+=================
+
+- 1200 "lead" sending out survey to see motivations
+    + Technology, schools, social enterprises, etc.
+    + Innocentive data of sponsors
+    
+- Existing literature on "Open Innovation"
+- Industry survey are you interested in or not?
+
+
+Older
+=====
+
+An important decision for crowdsourcing platforms
+======================================
+
+
+- Taking a competitive or collaborative approach?
+
+- How this affects problem solving (**"production"**)?
+    + more/less effort
+    + complementarity of skills
+    + enjoying the task more likely to return
+    
+- How this affects **participation**?
+    + Can outcomes be (also) driven by differences in attitudes towards competition?
+
+A wide variety of "institutional" settings
+======================================
+
+How economic **incentives** are provided
+
+- Examples of contests:
+    - First-to-finish approach
+    - Tournament
+
+- Examples of collaboration:
+    - Teamwork
+    - Wikis
+
+- Examples of both
+    + Competition in teams
+    + Sequential contests followed by collaboration phase
+
+Also a matter of platform "identity" 
+======================================
+
+**Communication** around the crowdsourcing event
+
+- Different ways:
+    + Emphasizing impact on society
+    + Emphasizing competition
+    + Emphasizing collaboration opportunities
+
+- Non-monetary rewards:
+    + Congratulatory rewards (yes/no)
+
+- Example: Top coder open (TCO)
+    + Event where competitors will be able to meet in person (collaboration)
+    + To gain access to TO you need to have enough points (competition)
+
+Understanding what is best to do    
+======================================
+
+- Observational data are not useful
+
+- Randomized experiment is the gold standard
+    + Requisites:
+        * Unit of analysis (individual, geographic location, etc.)  
+        * Isolating "treatment" and "controls" (exp. unit in non-overlapping groups)
+        * Data on responses (accurate data on responses)
+    
+Example of experimental design
+===============================
+
+- Solicitation via email randomized into groups
+    + Alter communication (easy but low effect size)
+    + Alter institutional setting (hard but high effect size)
+    
+- Unit of analysis is at the individual level (emails)
+
+- Treatments: 
+    + Plain solicitation (baseline effect)
+    + Solicitation with competitive session
+        - Emphasize competition
+        - Form subgroups and rank proposals
+    + Solicitation with collaborative session
+        - Emphasize collaboration
+        - Form subgroups and "brainstorm" ideas
+        
+- Outcomes:
+    + Registration to/participation in subgroups    
+    + Activity in subgroups
+    + Quality of final proposals
+
+
+Adding "science" 
+==================================
+
+- Can economic gender differences be (also) driven by gender differences in preferences?
+    + Literature in psychology
+    + Followed by experiments in economics 
+        * e.g., women less "competitively inclined" than men
+
++ Current explanations why women shy away from competition
+    * "overconfidence" 
+    * and "self-stereotyping"
+
++ Can we use experiment to solve this puzzle?
+
+
+
+Short survey with rewards to X members 
+====================================================
+
+- risk aversion
+- pro-social preferences

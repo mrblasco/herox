@@ -1,0 +1,10 @@
+
+Forcing a sequential design to be balanced
+==============================================
+
+- Complete randomization
+- Permuted block design
+- General: Biased coin design proposed by @efron1971forcing
+
+If $D>0$ then treated with probability $p\neq 1/2$.  
+

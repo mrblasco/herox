@@ -1,0 +1,43 @@
+---
+title: Power calculations
+---
+
+
+
+```{r, fig.width=9.5}
+# Simulate the data from a Binomial(n, p) where p_treated is 2 * p control
+simulate <- function(n, p) {
+  p_treated <- 2 * p
+  a <- rbinom(n, 1, p)
+  b <- rbinom(n, 1, p_treated)
+  d <- data.frame(y=c(a, b), z=c(rep(0, n), rep(1, n)))
+  return(d)
+}
+test <- function(d) { 
+  d$y <- factor(d$y, levels=c(0, 1)) # This ensures that even with all 0s I get 2x2 table
+  tab <- table(d) + 1 # This improves stability (Agresti, 1996)
+  fisher.test(tab)$p.value
+}
+
+
+# Consider power at `l` sample sizes
+n_seq <- seq(100, 2000, length=8)
+p_seq <- c(0.05, 0.01, 0.005)
+power <- matrix(nrow=length(n_seq), ncol=length(p_seq))
+for (i in 1:length(n_seq)) {
+  n <- n_seq[i]
+  for (k in 1:length(p_seq)) {
+    p <- p_seq[k]
+    out <- replicate(999, test(simulate(n, p)) < 0.05)
+    power[i, k] <- mean(out)
+  }
+}
+
+# Plot results
+par(mfrow=c(1, length(p_seq)))
+for (k in 1:length(p_seq)) {
+  plot(n_seq, power[, k], main=p_seq[k]
+      , xlab="Observations per treatment"
+      , ylab="Statistical power", type='o')
+}
+```
