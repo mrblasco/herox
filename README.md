@@ -1,7 +1,8 @@
-% Collaboration with HeroX.com
-% Andrea Blasco
-% February 27, 2017
-
+---
+title: Collaboration with HeroX.com
+author: Andrea Blasco
+date: February 27, 2017
+---
 
 Logs
 ====
