@@ -1,2 +1,2 @@
 #!/bin/bash
-Rscript prep.R > _out.Rout 2> _error.Rout
+Rscript 1_prep_data.R > _out.Rout 2> _error.Rout
