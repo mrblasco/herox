@@ -3,3 +3,4 @@ Archive
 *.RData
 *.rdb
 *.rdx
+*_cache
