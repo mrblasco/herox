@@ -1,0 +1,50 @@
+% Online Surveys
+% Experiment with HeroX
+% \today
+
+Questions
+=========
+
+Welcome to the HeroX Survey! 
+
+Thank you for agreeing to take part in this survey.
+
+At the completion, you will earn $[Amount] in Amazon gift certificates which will be sent out by [date].
+
+Please, select your age
+
+- [18-25]
+- [26-35]
+- [36-45]
+- [46-55]
+- [>55]
+
+Select your gender
+
+- [M]
+- [F]
+
+What is your main motivation to participate in an HeroX challenge?
+
+- [Cash prizes]
+- [Learning and practicing new skills]
+- [Building a better CV]
+- [Help society solve important problems]
+- [None of the above]
+
+What is your best estimate of the fraction of men competing on HeroX? 
+
+- [0-100]
+
+What is your best estimate of the probability of winning a challenge for a member like you?
+
+- [0-100]
+
+
+Thanks for your help.
+
+We will send the Gift Card to the following email address.
+
+Best,
+HeroX
+

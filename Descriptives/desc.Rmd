@@ -1,0 +1,122 @@
+% Descriptives HeroX.com
+% Andrea Blasco (ablasco@fas.harvard.edu)
+% \today
+
+```{r setup, echo=FALSE, message=FALSE}
+###### SETUP ##########################
+knitr::opts_chunk$set(cache=TRUE)
+load("../Prep_data/herox.RData")
+require(arm)
+
+# Color functions
+palette(c("navy","brown", "black", "orange", "blue", "green3", "yellow", "dodgerblue", "gray", "purple", "tomato1"))
+transp.color <- function(x) {
+	v <- col2rgb(x)/255
+	rgb(red=v[1], green=v[2], blue=v[3], alpha=0.5)
+}
+```
+
+```{r, echo=FALSE}
+###### STATS ##########################
+dat <- df
+g <- tapply(dat$Gender=="female", dat$Country, mean, na.rm=TRUE)
+n <- tapply(dat$Gender, dat$Country, length)
+top.countries <- names(tail(sort(n), 10))
+mean.all.countries <- mean(dat$Gender=="female", na.rm=TRUE)
+
+caption <- sprintf("Proportion of women by country. The gender comes from a prediction based on the first name, which identifies %i women, %i men, and %i  unknown. The plot shows the proportion of women per country that was estimated via a Bayesian-GLM regression approach. Women are about 30 percent of the population. In the figure, each circle's diameter is proportional to the number of registered members in the country. The name of the top 10 countries by registrants is also shown. Source: HeroX.com, February 2017."
+	, sum(dat$Gender=='female', na.rm=TRUE)
+	, sum(dat$Gender=='male', na.rm=TRUE)
+	, sum(is.na(dat$Gender)))
+```
+
+```{r bayes, echo=FALSE, fig.cap=caption}
+###### BAYES ##########################
+dat <- subset(df, !is.na(Gender) & !is.na(Country))
+
+# GLM with weights (inference is wrong!)
+agg <- data.frame(table(Gender=dat$Gender, Country=dat$Country))
+fit <- glm(Gender=="female" ~ Country, data=agg, weights=agg$Freq)
+
+# Bayesian GLM
+fit2 <- bayesglm(Gender=="female" ~ Country, data=agg, weights=agg$Freq, family=binomial)
+
+# Predictions
+yhat <- predict(fit2, type='response', newdata=data.frame(Country=levels(agg$Country)))
+est <- data.frame(Country=levels(agg$Country), yhat)
+w <- tapply(agg$Freq, agg$Country, sum)/850
+
+set.seed(3) # For positioning labels
+par(mar=c(1,4,1,3), family='serif')
+plot(est[, 2], cex=w, bty='n', ann=FALSE, xaxt="n", pch=21
+	, bg=transp.color("brown"), xpd=TRUE
+	, ylim=c(0, 0.8), xlim=c(1, length(w)+10))
+sapply(1:10, function(x) {
+	x <- top.countries[x]
+	X <- est[which(est[ ,1]==x), ]
+	w.1 <- w[names(w)==x]
+	points(X, col=transp.color(palette()[x]), cex=w.1, xpd=TRUE)
+	text(X, x, xpd=TRUE, pos=sample(4))
+})
+mtext("Proportion women", 2, 3)
+```
+
+
+```{r overtime, echo=FALSE, fig.cap="Proportion of women over time."}
+###### OVER TIME ##########################
+dat <- subset(df, !is.na(Gender) & !is.na(Country))
+dat[order(dat$Registration.date), ] -> dat
+
+# Limit dates
+min.date <- min(dat$Registration.date)
+max.date <- max(dat$Registration.date)
+
+# Split time into units of 20 days
+tens <- as.numeric(dat$Registration.date - min.date) %/% 20
+y <- tapply(dat$Gender=='female', tens, mean)
+x <- as.numeric(names(y))
+z <- cbind(x[-c(1:4)], y[-c(1:4)])
+# Active women percentage
+# dat2 <- subset(dat, Num.challenges>0)
+# tens2 <- as.numeric(dat2$Registration.date - min.date) %/% 20
+# y.femal2 <- tapply(dat2$Gender=='female', tens2, mean)
+
+# Plot
+par(mar=c(3,4,1,1), family='serif')
+plot(z, type='b', pch=21, bg=2, col=2, xaxt="n", bty="n", ylab="Proportion women")
+
+dates <- pretty(20*z[,1]  + min.date)
+tens2 <- as.numeric(dates - min.date) %/% 20
+axis(1, at=tens2, format(dates,'%Y'))
+grid(nx=NA, ny=NULL)
+```
+
+
+```{r visits, echo=FALSE, fig.cap="Member's total visits by gender in logarithmic scale."}
+###### VISITS ##########################
+par(mar=c(4,4,1,1), family='serif')
+# Panel 1
+hist(log(dat$Total.Visits), freq=FALSE, main=NA, ylim=c(0, 0.8), xlab="Log(total visits)")
+for (i in 1:2) { 
+	y <- log(dat$Total.Visits[dat$Gender==c("male", "female")[i]])
+	lines(density(y, from=0), col=i, lwd=2)
+}
+legend("topright",lty=1, col=1:2, c("male", "female"), bty="n")
+# Panel 2
+# z <- log(dat$Total.Visits[dat$Gender=="female"])
+# z1 <- log(dat$Total.Visits[dat$Gender=="male"])
+# qqplot(z, z1, xlab="female", ylab="male")
+# abline(a=0, b=1, col=2, lty=2)
+```
+
+```{r participating, echo=FALSE, fig.cap="Participating members by gender. Men are 16 percent more likely to compete than women."}
+tab <- table(y=ifelse(dat$Num.challenges>0,"Participating","Non-particip."), Gender=dat$Gender)
+chisq.test(tab)
+
+p <- prop.table(tab, 2)
+par(mar=c(4,4,1,1), family='serif')
+barplot(p, beside=TRUE, col=1:2, ylim=c(0, 1)) -> b
+legend("top", fill=1:2, rownames(p), bty="n")
+```
+
+

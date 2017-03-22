@@ -1,0 +1,10 @@
+beamer_presentation:
+#    incremental: true
+#    theme: "AnnArbor"
+#    colortheme: "dolphin"
+#    fonttheme: "structurebold"
+    toc: false
+    slide_level: 2
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
