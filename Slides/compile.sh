@@ -1,3 +1,3 @@
 #!/bin/bash
 
-crmd labmeeting.Rmd
+crmd deck.Rmd

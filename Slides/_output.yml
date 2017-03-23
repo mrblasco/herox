@@ -1,4 +1,5 @@
 beamer_presentation:
+    keep_tex: true 
 #    incremental: true
 #    theme: "AnnArbor"
 #    colortheme: "dolphin"

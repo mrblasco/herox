@@ -8,19 +8,20 @@ date: \today
 require(xtable)
 ```
 
-# Introduction
+Introduction
+=============
 
-## Women Contribute Online Less Than Men
- 
+Women Contribute Online Less Than Men
+------------------------------ 
+
 > - Only 13% women contributors on Wikipedia
   - Wikipedia entries about women are less likely to be complete
   - Only 5% women contributors on StackOverflow
   - Less than 5% women taking part in programming competitions (despite 30% in CS schools)
 
 
-
-## Implications for individuals, firms & society
-
+Implications for individuals, firms & society
+------------------------------ 
 
 **Profit loss** for online companies (e.g., Airbnb)
 
@@ -41,7 +42,8 @@ require(xtable)
 + Platform content may reflect biased views
 
 
-## A theory of gender imbalance
+A theory of gender imbalance
+------------------------------ 
 
 Many factors to consider  (see Lam et. al 2011)
 
@@ -57,22 +59,26 @@ We conjecture:
 1. Perceived gender composition in a competitive environment.
 2. \color{gray}{Collaboration incentives under gender imbalance [next study]}
 
-## The role of the perceived gender imbalance
+The role of the perceived gender imbalance
+==========================================
 
+<!-- Why the perceived gender imbalance matters?   -->
 
-Why the perceived gender imbalance matters? 
+Bayesian updating
+------------------------------ 
 
-. . .
+![What are the odds of winning for gender XY?](female_fuel_for_the_digital_economy.jpg)
 
-**Bayesian updating** 
+Role model
+------------------------------ 
 
-- Example:  "what are the odds of winning for gender XY?"
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{tap_water_pinker.jpg}
+\includegraphics[width=0.5\textwidth]{tap_water_basket.jpg}
+\caption{do I want to be successful in this?}
+\end{figure}
 
-. . .
-
-**Role model**
-
-- Example: "do I want to be successful? do I see myself?"
 
 ---
 
@@ -114,7 +120,7 @@ Solicitation via email featuring 2-3 member profiles.
 - Vary "success" composition
 
 ```{r, echo=FALSE, results="asis"}
-x <- c("1 men 2 women", "2 men 1 woman")
+x <- c("3 women","1 man 2 women", "2 men 1 woman", "3 men")
 y <- c("1 man role model", "1 woman role model")
 print(xtable(expand.grid(x, y), caption="Treatment combinations")
 	, comment=FALSE, booktabs=FALSE)
@@ -146,4 +152,23 @@ Use demographics + AMT ratings of 20-30 profiles
 ## Example teaming
 
 ![Teaming experiment](solicit_teaming.png)
+
+## Treatments
+
+1. Male-female rich environment (how many teams?)
+2. Splitting the pie rules (how many teams?)
+3. Confidence
+
+## TODOS
+
+- Ask HeroX about winners
+
+- Ask Facebook ads
+
+- Tokenism
+
+Interesting paper:
+
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2804265
+
 
