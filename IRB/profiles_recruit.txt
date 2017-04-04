@@ -1,0 +1,22 @@
+Recruitment message for profiles
+================================
+
+Dear [Username],
+ 
+We are writing to invite you to participate in a research project. As part of ongoing research into online communities, we are working with HeroX to run a field experiment investigating how the composition of online communities impacts individual behavior.
+
+We would like to feature you in an email newsletter as a HeroX participant. A profile photo and bio would be part of a panel of 3 such profiles in the email. An example with fictional participants is shown below. To participate, you will need to provide a photograph and short biography for inclusion in the panel.
+
+This research is being conducted by the Crowd Innovation Lab at Harvard University, http://projects.iq.harvard.edu/crowdinnovationlab/home.
+
+As consideration for your participation, we will send you a $10 Amazon gift card.
+
+If you are interested in participating, please go to [SURVEY URL] for complete instructions.
+
+Thank you,
+The Crowd Innovation Lab at Harvard and Hero X
+
+
+![Example panel](example_profiles.png)
+
+

@@ -1,0 +1,51 @@
+---
+title: "Online Gender Imbalance"
+
+thanks: "Blasco: Harvard Institute for Quantitative Social Science, Harvard University, 1737 Cambridge Street, Cambridge, MA 02138 (email: ablasco@fas.harvard.edu). Lakhani: Harvard Business School, Soldiers Field, Boston, MA 02163, and National Bureau of Economic Research (email: k@hbs.edu). Menietti: Harvard Institute for Quantitative Social Science, Harvard University, 1737 Cambridge Street, Cambridge, MA 02138 (email: mmenietti@fas.harvard.edu). We gratefully acknowledge the financial support of XXXX."
+
+date: "Last updated: `r format(Sys.time(), '%d %B, %Y')`"
+
+author: 
+    - Andrea Blasco
+    - Karim R. Lakhani
+    - Michael Menietti
+
+abstract: "We report results of a natural field experiment conducted  XXXX."
+
+JEL: 
+  - XXXX
+
+keywords: 
+  - XXXX
+   
+---
+
+```{r, echo=FALSE, warnings=FALSE, message=FALSE}
+knitr::opts_chunk$set(
+  cache=FALSE,
+  echo=FALSE,
+  message=FALSE,
+  warning=TRUE,
+  error=FALSE,
+  tidy=FALSE,
+  fig.width=5,
+  fig.height=5,
+  cache.path="Cache/",
+  fig.path="Figures/")
+```
+
+```{r child = '1_intro.Rmd'}
+```
+
+```{r child = '2_methods.Rmd'}
+```
+
+```{r child = '3_results.Rmd'}
+```
+
+```{r child = '4_discussion.Rmd'}
+```
+
+
+References
+=============

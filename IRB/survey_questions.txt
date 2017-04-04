@@ -1,0 +1,77 @@
+Survey
+=========
+
+Welcome to the HeroX community Survey! 
+
+Thank you for agreeing to take part in this survey on what motivates our members to be involved in HeroX and to participate in our activities. 
+
+At the completion, you will earn $[Amount] in Amazon gift certificates which will be sent out by [date]. 
+
+Note that children under 18 are not allowed to take part in the survey.
+
+----
+
+Please, select your age
+
+- [18-25]
+- [26-35]
+- [36-45]
+- [46-55]
+- [>55]
+
+Select your gender
+
+- [M]
+- [F]
+
+Select your country
+
+- [country]
+
+Please describe as best as you can your motivations to participate in an HeroX challenge. What is the most important factor?
+
+- [Fun]
+- [Earn money]
+- [Learning/improve skills]
+- [Earn a reputation/build CV]
+- [Help society solve important problems]
+- [None of the above]
+
+Are you a competitive person in general?
+
+[Strongly agree][...][Strongly disagree]
+
+Do you know you can form teams on HeroX?
+
+[yes][no]
+
+Now think about taking part in a challenge where you could choose between working alone or in a team with other people. You and your potential teammates have not met before but everyone wants to participate in the challenge. What would you choose? 
+
+[team] [alone]
+
+If you were in a team, how would you like the team to be?
+ 
+- [same age teammates] [very important][...] [not important at all]
+- [same gender teammates] [very important][...] [not important at all]
+- [same country teammates] [very important][...] [not important at all]
+
+What is your best estimate of the fraction of people like you competing on HeroX? 
+
+- same gender [0-100]
+- same age [0-100]
+- same country [0-100]
+
+Now thinking about the type of challenges that are present on the website. What challenge subjects would you like to see the most on the platform?
+
+[we will use TAGS from HeroX]
+[e.g., Data science, Public policy, Science & engineering problems, Arts, Design, Architecture]
+
+---
+
+You've have completed the survey. Thanks for your help. 
+
+We will send the Gift Card to the following email address [Email]
+
+Best,
+HeroX
+

@@ -1,0 +1,26 @@
+Landing page of profiles recruitment message
+=========================================
+
+Thank you for your interest in participating in this research project. 
+
+Please read through the consent information before continuing.
+
+[Consent information goes here]
+
+By clicking below, you consent to participate in this research study. 
+
+
+Task
+======
+
+Now we ask you to respond to the questions below. 
+
+* Please, provide updated biographic information, if you wish to do so (otherwise you give your consent to use your public profile as currently on HeroX). 
+
+* Please, provide an updated profile photograph. 
+
+Thanks for your participation. Click here if you want to receive news & updates about this study. 
+
+Best, 
+CIL at Harvard University 
+

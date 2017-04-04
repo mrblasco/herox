@@ -1,0 +1,33 @@
+% Mock Solicitation email
+% Experiment with HeroX
+% \today
+
+Structure solicitation message
+==============================
+
+Dear [First name],
+
+[Some call to action] "Join the other members of HeroX 
+and start working on the newest challenges on our site."
+
+Here are some of our HeroX heros:
+
+- [Picture MALE] 
+- [First name featured user #1]
+- [Bio featured user #1]
+
+- [PICTURE FEMALE] 
+- [First name featured user #2]
+- [Bio featured user #2]
+
+- [PICTURE MALE]
+- [First name featured user #3]
+- [Bio featured user #3]
+
+Click here to join.
+
+
+Mock solicitation
+=============
+
+![Solicitation example](solicit_gender_compo.png)

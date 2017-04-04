@@ -1,0 +1,40 @@
+Experimental design
+===================
+
+
+Profiles selection
+-------------------
+
+1. Recruitment profiles...
+2. Consent profiles...
+3. Profile survey...
+
+Evaluation at CLER
+
+1. Recruitment...
+2. Consent for CLER...
+
+Preliminary/final survey
+------------------
+
+1. Recruit survey...
+2. Survey questions...
+
+Treatment
+----------
+
+1. solicitation...
+2. debriefing...
+
+
+AER Registration
+
+Power calculations
+------------------
+
+Context
+--------
+
+We designed two interventions in collaboration with HeroX.com, a crowdsourcing platform.  We view HeroX as an example of a competitive (platform users make submissions solving a given problem and the top submissions are awarded a cash prize) and collaborative environment, respectively. 
+
+

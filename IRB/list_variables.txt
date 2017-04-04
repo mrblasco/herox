@@ -1,0 +1,11 @@
+See example of member profile
+https://herox.com/heroes/ovidiudobre-3759
+
+List of tracked variables
+--------------------------
+
+- Total clicks for solicitation email (not publicly available)
+- Total visits to HeroX website main page (not publicly available)
+- Accepted challenges & submissions	(see "Submissions" tab on profile page)
+- Forum posts (see "Recent activity" tab on profile page)
+

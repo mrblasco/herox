@@ -1,0 +1,56 @@
+CLER consent
+=============
+
+Description
+-----------
+
+As part of ongoing research into online communities, we are working with an online
+platform investigating how the composition of the community members
+impacts participation in the community. To this end, we want to evaluate
+several online profiles (pictures, bio description, etc.) along
+dimensions such as physical attractiveness, skills, and potential role
+models. Your task will be to review and assign a score to each profile.
+
+Who we are
+----------
+
+This research is being conducted by the Crowd Innovation Lab at Harvard
+University, <http://projects.iq.harvard.edu/crowdinnovationlab/home>.
+
+Risks and Benefits
+-----------------------
+
+There are no anticipated risks to you from participation in this
+experiment. There are no direct benefits to you from the research
+itself. Please consider this when deciding to participate.
+
+Costs and Payments
+-----------------------
+
+There are no costs to you for participation in this research study. As
+consideration for your participation, we will pay you a \$10 Amazon gift
+card.
+
+Confidentiality
+-----------------------
+
+The scores you give will not be made public.
+
+Right to withdraw
+-----------------------
+
+You do not have to take part in this research study and that you have
+the right to withdraw from the experiment at any time. Simply notify us
+of your desire to withdraw, and we will no longer use your profile. You
+also may be removed from the experiment by the investigators at any
+time.
+
+To participate, you must be:
+-----------------------
+
+-   US citizen or permanent resident
+-   18 years of age or older
+-   fluent in English
+-   comfortable using a computer
+
+

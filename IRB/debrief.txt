@@ -1,0 +1,12 @@
+% Debriefing for gender imbalance online study
+%
+% \today
+
+Though the proportion of Internet users is nearly the same across the genders, researchers have found significant gender imbalances in online behavior. For example, only 13 percent of Wikipedia contributors are women or less than 5 percent of StackOverflow users answering technical questions are women. The reasons behind this gender gap are not fully understood. Sometimes it seems this has to do with how people imagine the gender composition of the members of a platform. This study aims to understand whether this might be true. So, we first solicited participation via emails featuring male and female members. The gender composition in these emails varied at random and this acted as our main independent variable. Then we looked at the number of members participating in a challenge as our main response variable. Before collecting the data, we anticipated a positive effect of a mixed gender composition on participation. 
+
+Our main findings are described below.
+
+[Findings]
+
+
+Please contact [Supervisor] at the following e-mail address [email] if you have any questions regarding this study.
