@@ -1,13 +1,19 @@
 ########################################
-# Prepare dataset for HeroX
-# Andrea
+# Prepare dataset for HeroX project
+# Andrea Blasco (ablasco@fas.harvard.edu)
 # March 7, 2017
 #########################################
+rm(list=ls())
 
 # Data files
-file <- "../Data/all_users.csv"
-# file <- "../Data/HeroX Users_15March2017.csv"
-raw.df <- read.csv(file, stringsAsFactors=FALSE)
+# input <- "../Data/HeroX Users_15March2017.csv"
+#input 		<- "../Data/all_users.csv"
+input 		<- "../Data/HeroX Users_7April2017.csv"
+identity 	<- "../Data/.emails.csv"
+output 		<- "herox.RData"
+
+# Load data
+raw.df <- read.csv(input, stringsAsFactors=FALSE)
 
 # Functions to match name and gender
 source("0_gender_func.R")
@@ -46,6 +52,9 @@ consistent_data <- function(df) {
 	# Drop temp vars
 	df$Gender2 <- NULL
 	
+	# Save identifiable information
+	write.csv(df[, c("userID", "Email")], file=identity, row.names=FALSE)
+	
 	# De-identify data
 	df$Last.name <- NULL
 	df$Location <- NULL
@@ -77,9 +86,7 @@ sapply(df, function(x) {
 		return(c(NA, NA))
 	}
 })
-
-
-save(df, file="herox.RData")
+save(df, file=output)
 
 # PLOT Gender imbalance!
 # par(mar=c(4,4,1,1))

@@ -29,12 +29,46 @@ Treatment
 
 AER Registration
 
-Power calculations
-------------------
+Power simulations
+-----------------
+
+```{r, message=FALSE, warning=FALSE, fig.width=7, fig.height=7, fig.cap="Power simulations. Relationship between simulated statistical power (y-axis) and group size (x-axis). Data are simulated from a binomial model with varying probability of success for subjects in treatment and control groups; Effect size is the difference in probability of success between control and treatment groups which is reported at the bottom of each picture; Next to each curve we have reported the corresponding probability of success in the control group. Significance computed using Chi-square test statistics with $\\alpha=0.05$. We used 20 simulations for each instance."}
+par(mfrow=c(2,2), mar=c(4.1,2.1,4.1,2.1))
+effect.size <- seq(0.01, 0.04, l=4)
+n <- seq(100, 1000, l=10)
+h <- seq(0.01, 0.10, l=10)
+
+for (i in effect.size) {
+	p <- simulate.power(i, num.rep=20)$power.mat
+	plot(NA, NA, xlim=c(50, 1000), ylim=c(0, 1), type='b'
+		, bty='n', yaxt='n', xaxt='n'
+		, xlab=sprintf("True effect size: %0.2f",i))
+	apply(p, 2, function(x) lines(n, x, col=2))
+	abline(h=0.8, lty=2)
+	axis(1, n)
+	text(x=100, y=0.8, "Power=80%", pos=3, xpd=T)
+	text(x=n, y=diag(p), h)
+}
+
+```
 
 Context
 --------
 
 We designed two interventions in collaboration with HeroX.com, a crowdsourcing platform.  We view HeroX as an example of a competitive (platform users make submissions solving a given problem and the top submissions are awarded a cash prize) and collaborative environment, respectively. 
+
+
+Data
+------
+
+```{r}
+# Summary stats table
+```
+
+```{r}
+# Evaluation role models
+```
+
+
 
 

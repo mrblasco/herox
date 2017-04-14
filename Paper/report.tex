@@ -68,7 +68,7 @@
 \newcommand\sub[1]{_{#1}}
 \newcommand\supsc[1]{^{#1}}
 
-\title{Online Gender Imbalance\thanks{Blasco: Harvard Institute for Quantitative Social Science, Harvard
+\title{Gender Imbalance Online\thanks{Blasco: Harvard Institute for Quantitative Social Science, Harvard
 University, 1737 Cambridge Street, Cambridge, MA 02138 (email:
 \href{mailto:ablasco@fas.harvard.edu}{\nolinkurl{ablasco@fas.harvard.edu}}).
 Lakhani: Harvard Business School, Soldiers Field, Boston, MA 02163, and
@@ -79,7 +79,7 @@ Cambridge Street, Cambridge, MA 02138 (email:
 \href{mailto:mmenietti@fas.harvard.edu}{\nolinkurl{mmenietti@fas.harvard.edu}}).
 We gratefully acknowledge the financial support of XXXX.}}
 \author{Andrea Blasco \and Karim R. Lakhani \and Michael Menietti}
-\date{Last updated: 04 April, 2017}
+\date{Last updated: 09 April, 2017}
 
 \begin{document}
 \maketitle
@@ -197,7 +197,21 @@ Evaluation at CLER
 
 AER Registration
 
-\subsection{Power calculations}\label{power-calculations}
+\subsection{Power simulations}\label{power-simulations}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/unnamed-chunk-6-1.pdf}
+\caption{Power simulations. Relationship between simulated statistical
+power (y-axis) and group size (x-axis). Data are simulated from a
+binomial model with varying probability of success for subjects in
+treatment and control groups; Effect size is the difference in
+probability of success between control and treatment groups which is
+reported at the bottom of each picture; Next to each curve we have
+reported the corresponding probability of success in the control group.
+Significance computed using Chi-square test statistics with
+\(\alpha=0.05\). We used 20 simulations for each instance.}
+\end{figure}
 
 \subsection{Context}\label{context}
 
@@ -206,6 +220,8 @@ crowdsourcing platform. We view HeroX as an example of a competitive
 (platform users make submissions solving a given problem and the top
 submissions are awarded a cash prize) and collaborative environment,
 respectively.
+
+\subsection{Data}\label{data}
 
 \renewcommand\refname{References}
 \bibliography{library.bib}

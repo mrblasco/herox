@@ -30,7 +30,8 @@ genderize <- function(x, ...) {
 	index <- match(x.cleaned, g$name)
 	return(g$gender[index])
 }
-#
+
+# More than one name
 genderize.multi <- function(x, ...) {
 	x.cleaned <- clean.names(x)
 	x.multi <- x.cleaned[grep(" ", x.cleaned)]

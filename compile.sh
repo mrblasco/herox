@@ -1,18 +1,52 @@
 #!/bin/bash
 output_dir=Paper
+notes_dir=Paper_notes
+slides_dir=Slides
+now=`date +%b%d`
+report_file=report.Rmd
+notes_file=report_notes.Rmd
+slides_file=report_slides.Rmd
 
-# Slides
+# Prepare data
+# mv .RData $now.RData
+# Rscript -e "source('report_prep_data.R')"
+
 if [ "$1" == "--slides" ]; then
-	cp .RData deck.Rmd func.R Slides/ && cd Slides && crmd deck.Rmd
+	cp .RData $slides_file func.R Slides/ 
+	cd Slides && crmd $slides_file
+	exit
 fi
 
-# Paper
+if [ "$1" == "--notes" ]; then
+	cp _output.yml $notes_dir
+	cp Template/* $notes_dir/Template/
+	cp $notes_file $notes_dir
+	cd $notes_dir && crmd $notes_file
+	exit
+fi
+
+if [ "$1" == "--survey" ]; then
+	cp _output.yml $notes_dir
+	cp Template/* $notes_dir/Template/
+	cp analysis_survey.Rmd $notes_dir
+	cd $notes_dir && crmd analysis_survey.Rmd
+	exit
+fi
+
+
+exit 0
+
+echo "Copy files..."
 cp ~/Library/Application\ Support/BibDesk/library.bib $output_dir/
 cp _output.yml $output_dir
-cp *.Rmd $output_dir
 cp Template/* $output_dir/Template/
-cd $output_dir && crmd report.Rmd
-exit
+cp *.Rmd *.R .RData $output_dir
+echo "Compile paper..."
+cd $output_dir
+crmd $report_file > report.Rout 2> report.Rerr
+echo "Done!"
+
+
 # echo "Copy data..."
 # cp $data $output_dir/.RData 
 # cp timing.csv $output_dir/

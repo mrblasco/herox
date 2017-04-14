@@ -1,2 +1,4 @@
 #!/bin/bash
-Rscript 1_prep_data.R > _out.Rout 2> _error.Rout
+# Create herox.RData in current folder
+# Create .emails.csv in original data folder
+Rscript 1_prep_data.R > data.Rout 2> data.Rerr
