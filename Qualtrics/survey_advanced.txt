@@ -1,0 +1,384 @@
+[[AdvancedFormat]]
+
+[[Block:Welcome]]
+
+[[Question:DB]]
+Welcome to the HeroX community Survey! <br><br> Thank you for agreeing to take part in this survey on what motivates our members to be involved in HeroX and to participate in our activities. <br><br> At the completion, you will earn $10 in Amazon gift certificates which will be sent out by the end of the next week. <br><br> Please, note that children under 18 are not allowed to take part in the survey.
+
+[[Question:DB]]
+Please, enter your name and email address as appear on HeroX platform
+
+[[ED:SawWelcome:1]]
+
+[[Block:Demographics]]
+
+[[Question:MC:SingleAnswer]]
+Please, select your age
+[[Choices]]
+<18
+18-25
+26-35
+36-45
+46-55
+>55
+
+[[Question:MC:SingleAnswer]]
+Select your gender
+[[Choices]]
+Female
+Male
+
+[[Question:MC:Dropdown]]
+Select your country of origin
+[[Choices]]
+Andorra
+United Arab Emirates
+Afghanistan
+Antigua and Barbuda
+Anguilla
+Albania
+Armenia
+Netherlands Antilles
+Angola
+Antarctica
+Argentina
+American Samoa
+Austria
+Australia
+Aruba
+Azerbaijan
+Bosnia and Herzegovina
+Barbados
+Bangladesh
+Belgium
+Burkina Faso
+Bulgaria
+Bahrain
+Burundi
+Benin
+Bermuda
+Brunei
+Bolivia
+Brazil
+Bahamas
+Bhutan
+Bouvet Island
+Botswana
+Belarus
+Belize
+Canada
+Cocos [Keeling] Islands
+Congo [DRC]
+Central African Republic
+Congo [Republic]
+Switzerland
+Côte d'Ivoire
+Cook Islands
+Chile
+Cameroon
+China
+Colombia
+Costa Rica
+Cuba
+Cape Verde
+Christmas Island
+Cyprus
+Czech Republic
+Germany
+Djibouti
+Denmark
+Dominica
+Dominican Republic
+Algeria
+Ecuador
+Estonia
+Egypt
+Western Sahara
+Eritrea
+Spain
+Ethiopia
+Finland
+Fiji
+Falkland Islands [Islas Malvinas]
+Micronesia
+Faroe Islands
+France
+Gabon
+United Kingdom
+Grenada
+Georgia
+French Guiana
+Guernsey
+Ghana
+Gibraltar
+Greenland
+Gambia
+Guinea
+Guadeloupe
+Equatorial Guinea
+Greece
+South Georgia and the South Sandwich Islands
+Guatemala
+Guam
+GuineaBissau
+Guyana
+Gaza Strip
+Hong Kong
+Heard Island and McDonald Islands
+Honduras
+Croatia
+Haiti
+Hungary
+Indonesia
+Ireland
+Israel
+Isle of Man
+India
+British Indian Ocean Territory
+Iraq
+Iran
+Iceland
+Italy
+Jersey
+Jamaica
+Jordan
+Japan
+Kenya
+Kyrgyzstan
+Cambodia
+Kiribati
+Comoros
+Saint Kitts and Nevis
+North Korea
+South Korea
+Kuwait
+Cayman Islands
+Kazakhstan
+Laos
+Lebanon
+Saint Lucia
+Liechtenstein
+Sri Lanka
+Liberia
+Lesotho
+Lithuania
+Luxembourg
+Latvia
+Libya
+Morocco
+Monaco
+Moldova
+Montenegro
+Madagascar
+Marshall Islands
+Macedonia [FYROM]
+Mali
+Myanmar [Burma]
+Mongolia
+Macau
+Northern Mariana Islands
+Martinique
+Mauritania
+Montserrat
+Malta
+Mauritius
+Maldives
+Malawi
+Mexico
+Malaysia
+Mozambique
+Namibia
+New Caledonia
+Niger
+Norfolk Island
+Nigeria
+Nicaragua
+Netherlands
+Norway
+Nepal
+Nauru
+Niue
+New Zealand
+Oman
+Panama
+Peru
+French Polynesia
+Papua New Guinea
+Philippines
+Pakistan
+Poland
+Saint Pierre and Miquelon
+Pitcairn Islands
+Puerto Rico
+Palestinian Territories
+Portugal
+Palau
+Paraguay
+Qatar
+Réunion
+Romania
+Serbia
+Russia
+Rwanda
+Saudi Arabia
+Solomon Islands
+Seychelles
+Sudan
+Sweden
+Singapore
+Saint Helena
+Slovenia
+Svalbard and Jan Mayen
+Slovakia
+Sierra Leone
+San Marino
+Senegal
+Somalia
+Suriname
+São Tomé and Príncipe
+El Salvador
+Syria
+Swaziland
+Turks and Caicos Islands
+Chad
+French Southern Territories
+Togo
+Thailand
+Tajikistan
+Tokelau
+TimorLeste
+Turkmenistan
+Tunisia
+Tonga
+Turkey
+Trinidad and Tobago
+Tuvalu
+Taiwan
+Tanzania
+Ukraine
+Uganda
+US Minor Outlying Islands
+United States
+Uruguay
+Uzbekistan
+Vatican City
+Saint Vincent and the Grenadines
+Venezuela
+British Virgin Islands
+US Virgin Islands
+Vietnam
+Vanuatu
+Wallis and Futuna
+Samoa
+Kosovo
+Yemen
+Mayotte
+South Africa
+Zambia
+Zimbabwe
+
+[[Block:Motivations]]
+
+[[Question:MC:SingleAnswer]]
+Please, describe as best as you can your motivations to participate in an HeroX challenge. What is the most important motive?
+[[Choices]]
+Having fun
+Earning money
+Learning new skills
+Earning a reputation / building a CV
+Helping society solve important problems
+None of the above
+
+[[Block:Competitive]]
+
+[[Question:MC:SingleAnswer]]
+Are you a competitive person in general?
+
+[[Choices]]
+Strongly agree
+Somewhat agree
+Neither agree nor disagree
+Somewhat disagree
+Strongly disagree
+
+[[Block:Teams]]
+
+[[Question:MC:SingleAnswer]]
+Did you know you can form teams with other HeroX members?
+[[Choices]]
+Yes
+No
+
+[[Question:MC:SingleAnswer]]
+Now, think about taking part in a challenge where you could choose between working alone or in a team with other people. You and your potential teammates have not met before but everyone wants to participate in the challenge. What would you choose? 
+[[Choices]]
+Working in team
+Working alone
+Not sure
+
+[[PageBreak]]
+
+[[Question:Matrix]]
+If you were in a team, think about how would you like the team to be. How important is for you that your teammates have: 
+
+[[Choices]]
+Same age
+Same gender
+Same country
+
+[[AdvancedAnswers]]
+[[Answer]]
+Extremely important
+[[Answer]]
+Very important
+[[Answer]]
+Moderately important
+[[Answer]]
+Slightly important
+[[Answer]]
+Not at all important
+
+[[PageBreak]]
+
+[[Question:Matrix]]
+What is your best estimate of the fraction of people like you competing on HeroX?
+
+[[Choices]]
+Same age
+Same gender
+Same country
+
+[[AdvancedAnswers]]
+[[Answer]]
+10% of HeroX members
+[[Answer]]
+20% of HeroX members
+[[Answer]]
+30% of HeroX members
+[[Answer]]
+40% of HeroX members
+[[Answer]]
+50% of HeroX members
+[[Answer]]
+60% of HeroX members
+[[Answer]]
+70% of HeroX members
+[[Answer]]
+80% of HeroX members
+[[Answer]]
+90% of HeroX members
+[[Answer]]
+100% of HeroX members
+
+[[Block:Topics]]
+
+[[Question:Matrix]]
+Now, thinking about the type of challenges that are present on the website. What challenges would you like to see the most on the platform?
+
+[[Choices]]
+A
+B
+C
+
+
+

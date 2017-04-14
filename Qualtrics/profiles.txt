@@ -1,0 +1,47 @@
+[[AdvancedFormat]]
+
+[[Block:Welcome]]
+
+[[Question:DB]]
+Welcome! 
+
+Thank you for agreeing to take part in this study. At the completion, you will earn $XXXX in Amazon gift certificates which will be sent out by the end of the next week. 
+
+Please read through the consent information before continuing. By clicking next, you consent to participate in this research study.
+
+<div style="font-size:12px; background-color:LightGrey; border: 1px black solid;">
+<h3 id="participation-is-voluntary">Participation is voluntary</h3>
+<p>It is your choice whether or not to participate in this research. If you choose to participate, you may change your mind and leave the study at any time. Refusal to participate or stopping your participation will involve no penalty or loss of benefits to which you are otherwise entitled.</p>
+<h3 id="what-is-the-purpose-of-this-research">What is the purpose of this research?</h3>
+<p>As part of ongoing research into online communities, we are working with Hero X to run a field experiment investigating how the composition of the community impacts participation in the community across different types of people.</p>
+<h3 id="how-long-will-i-take-part-in-this-research">How long will I take part in this research?</h3>
+<p>We anticipate your involvement requiring less than 1 hour of your time.</p>
+<h3 id="what-can-i-expect-if-i-take-part-in-this-research">What can I expect if I take part in this research?</h3>
+<p>You will need to provide a suitable photograph of yourself and short biography for use in a user profile.</p>
+<h3 id="what-are-the-risks-and-possible-discomforts">What are the risks and possible discomforts?</h3>
+<p>Your Hero X profile will presumably receive substantially more visibility if you decide to participate. There are no anticipated risks to you from participation in this experiment. There are no direct benefits to you from the research itself.</p>
+<h3 id="will-i-be-compensated-for-participating-in-this-research">Will I be compensated for participating in this research?</h3>
+<p>There are no costs to you for participation in this research study. As consideration for your participation, we will send you a $XXX Amazon gift card.</p>
+<h3 id="if-i-take-part-in-this-research-how-will-my-privacy-be-protected-what-happens-to-the-information-you-collect">If I take part in this research, how will my privacy be protected? What happens to the information you collect?</h3>
+<p>The profile information you provide will be public, as it currently is on the Hero X website. The profile information will also be reviewed by independent raters alongside other profiles to assess their comparability.</p>
+<p>Your participation in the research itself will be confidential. Typically, only project researchers will have access to that information. It is possible the information could be reviewed by auditors checking to see that the research is done properly.</p>
+<h3 id="if-i-have-any-questions-concerns-or-complaints-about-this-research-study-who-can-i-talk-to">If I have any questions, concerns or complaints about this research study, who can I talk to?</h3>
+<p>The study is being conducted by the Crowd Innovation Lab at Harvard which can be reached at:</p>
+<p>Crowd Innovation Lab<br />
+1737 Cambridge St.<br />
+Cambridge, MA 02138<br />
+<a href="mailto:harvardislab@gmail.com">harvardislab@gmail.com</a></p>
+<p>This research has been reviewed by the Committee on the Use of Human Subjects in Research at Harvard University. They can be reached at:</p>
+<p>1414 Massachusetts Avenue, Second Floor<br />
+Cambridge, MA 02138<br />
+617-496-2847<br />
+<a href="mailto:cuhs@fas.harvard.edu">cuhs@fas.harvard.edu</a></p>
+<p>Please contact us:</p>
+<ul>
+<li>If you have questions, concerns, or complaints,</li>
+<li>If you would like to talk to the research team,</li>
+<li>If you think the research has harmed you, or</li>
+<li>If you wish to withdraw from the study.</li>
+</ul>
+</div>
+

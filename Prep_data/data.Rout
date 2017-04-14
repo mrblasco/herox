@@ -1,0 +1,49 @@
+  First.name                  Country                     Referer     
+ Length:56493       United States :17615   www.nasa.gov       : 3521  
+ Class :character   Canada        : 3945   m.facebook.com     : 2912  
+ Mode  :character   India         : 3930   www.facebook.com   : 2847  
+                    United Kingdom: 1557   accounts.google.com: 2561  
+                    France        : 1429   www.google.com     : 1403  
+                    (Other)       :25594   (Other)            :18657  
+                    NA's          : 2423   NA's               :24592  
+    Skills          Registration.date      Last.login        
+ Length:56493       Min.   :2013-08-26   Min.   :2013-08-27  
+ Class :character   1st Qu.:2015-10-16   1st Qu.:2015-10-24  
+ Mode  :character   Median :2016-05-13   Median :2016-05-14  
+                    Mean   :2016-04-22   Mean   :2016-04-30  
+                    3rd Qu.:2016-11-26   3rd Qu.:2016-11-26  
+                    Max.   :2016-12-09   Max.   :2016-12-09  
+                                         NA's   :13          
+ Newsletter.subscriber  Total.Visits      Total.Visits.last.30.days
+ Mode :logical         Min.   :    0.00   Min.   :   0.000         
+ FALSE:15630           1st Qu.:    5.00   1st Qu.:   0.000         
+ TRUE :40863           Median :    9.00   Median :   0.000         
+ NA's :0               Mean   :   28.71   Mean   :   7.617         
+                       3rd Qu.:   20.00   3rd Qu.:   6.000         
+                       Max.   :12479.00   Max.   :4313.000         
+                                                                   
+     userID         Gender        Bio.nchar        Facebook.yes   
+ Min.   :    1   female:15076   Min.   :    0.00   Mode :logical  
+ 1st Qu.:14143   male  :30726   1st Qu.:    0.00   FALSE:53331    
+ Median :28287   NA's  :10691   Median :    0.00   TRUE :3162     
+ Mean   :28290                  Mean   :   50.29   NA's :0        
+ 3rd Qu.:42440                  3rd Qu.:    0.00                  
+ Max.   :56576                  Max.   :14459.00                  
+                                                                  
+ Google.yes      Twitter.yes     LinkedIn.yes    Num.challenges  
+ Mode :logical   Mode :logical   Mode :logical   Min.   : 0.000  
+ FALSE:56110     FALSE:55443     FALSE:53661     1st Qu.: 0.000  
+ TRUE :383       TRUE :1050      TRUE :2832      Median : 1.000  
+ NA's :0         NA's :0         NA's :0         Mean   : 0.567  
+                                                 3rd Qu.: 1.000  
+                                                 Max.   :26.000  
+                                                                 
+     First.name Country Referer Skills Registration.date Last.login
+[1,]         NA      NA      NA     NA                NA         NA
+[2,]         NA      NA      NA     NA                NA         NA
+     Newsletter.subscriber Total.Visits Total.Visits.last.30.days userID Gender
+[1,]               42.3964           NA                        NA     NA     NA
+[2,]             2490.3100           NA                        NA     NA     NA
+     Bio.nchar Facebook.yes Google.yes Twitter.yes LinkedIn.yes Num.challenges
+[1,]        NA    2.8764626  0.3965093    1.520542     3.329616             NA
+[2,]        NA    0.6913752  5.9976524  376.570980   243.520594             NA

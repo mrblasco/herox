@@ -1,0 +1,77 @@
+  |                                                                         |                                                                 |   0%  |                                                                         |......                                                           |   9%
+   inline R code fragments
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo    : logi FALSE
+ $ warnings: logi FALSE
+ $ message : logi FALSE
+
+  |                                                                         |..................                                               |  27%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  36%
+label: unnamed-chunk-2 (with options) 
+List of 1
+ $ child: chr "1_intro.Rmd"
+
+  |                                                                         |                                                                 |   0%  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+  |                                                                         |..............................                                   |  45%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  55%
+label: unnamed-chunk-3 (with options) 
+List of 1
+ $ child: chr "2_methods.Rmd"
+
+  |                                                                         |                                                                 |   0%  |                                                                         |.........                                                        |  14%
+  ordinary text without R code
+
+  |                                                                         |...................                                              |  29%
+label: unnamed-chunk-6 (with options) 
+List of 5
+ $ message   : logi FALSE
+ $ warning   : logi FALSE
+ $ fig.width : num 7
+ $ fig.height: num 7
+ $ fig.cap   : chr "Power simulations. Relationship between simulated statistical power (y-axis) and group size (x-axis). Data are simulated from a"| __truncated__
+
+  |                                                                         |............................                                     |  43%
+  ordinary text without R code
+
+  |                                                                         |.....................................                            |  57%
+label: unnamed-chunk-7
+  |                                                                         |..............................................                   |  71%
+  ordinary text without R code
+
+  |                                                                         |........................................................         |  86%
+label: unnamed-chunk-8
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+  |                                                                         |.........................................                        |  64%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  73%
+label: unnamed-chunk-4 (with options) 
+List of 1
+ $ child: chr "3_results.Rmd"
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  91%
+label: unnamed-chunk-5 (with options) 
+List of 1
+ $ child: chr "4_discussion.Rmd"
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+/usr/local/bin/pandoc +RTS -K512m -RTS report.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output report.tex --template Template/template.latex --highlight-style kate --latex-engine /Library/TeX/texbin/pdflatex --include-in-header Template/header.tex --include-before-body Template/doc_prefix.tex --include-after-body Template/doc_suffix.tex --natbib --bibliography library.bib 
