@@ -1,0 +1,112 @@
+% Notes on HeroX project
+%
+% \today
+
+```{r, echo=FALSE}
+# Data preparation
+files <- list.files("../Data/iContact", pattern="Compare", full=TRUE)
+listDF <- lapply(files, function(x) { 
+	y <- read.csv(x); y$sender <- gsub(".*_([a-z]+)[0-9]?.csv","\\1",x)
+	return(y)
+})
+icontact <- do.call("rbind", listDF)
+```
+
+```{r, message=FALSE, echo=FALSE, fig.width=9, fig.cap="Contacts sent to, emails opened, clicks."}
+
+attach(icontact)
+contacts_qtl <- cut(Contacts_Sent_To, quantile(Contacts_Sent_To), include=T)
+
+# Dates
+x <- as.Date(Date, fo="%B %d, %Y")
+x[is.na(x)] <- as.Date(Date[is.na(x)])
+date <- x
+
+# Statistics
+par(mfrow=c(1, 3))
+hist(Contacts_Sent_To, "Scott")
+plot(date, Opened, cex=Contacts_Sent_To/1e4)
+ols <- lm(Opened ~ 1, weights=Contacts_Sent_To)
+mtext(sprintf("Mean=%0.2f%s", coef(ols),"%"), 3)
+plot(date, Clicks, cex=Contacts_Sent_To/1e4)
+ols <- lm(Clicks ~ 1, weights=Contacts_Sent_To)
+mtext(sprintf("Mean=%0.2f%s", coef(ols), "%"), 3)
+```
+
+\newpage
+
+```{r, echo=FALSE, fig.cap="Days of the week", fig.width=9}
+# By the day of the week
+days.of.week <- weekdays(x=as.Date(seq(7), origin="1950-01-01"))
+wdays <- factor(weekdays(date), levels=days.of.week)
+par(mfrow=c(1, 2))
+boxplot(Opened ~ wdays, ylab="Opened")
+boxplot(Clicks ~ wdays, ylab="Clicks")
+```
+
+\newpage
+
+
+```{r, echo=FALSE}
+fit.open <- lm(Opened ~ wdays, weights=Contacts_Sent_To)
+fit.clicks <- lm(Clicks/100 ~ wdays, weights=Contacts_Sent_To)
+# summary(fit.open)
+# summary(fit.clicks)
+
+coefplot <- function(fit, ...) {
+	x <- summary(fit)$coeff
+	estimates <- x[, 1]
+	st.err <- x[, 2]
+	n <- nrow(x)
+	xrange <- range(estimates + 2*c(st.err, -st.err))
+	plot(x=estimates, y=1:n, bty='n', xlim=xrange, pch=16, ...)
+	text(estimates, y=1:n, names(estimates), pos=3, xpd=TRUE)
+	segments(x0=estimates+2*st.err, x1=estimates-2*st.err, y0=1:n)
+	segments(x0=estimates+st.err, x1=estimates-st.err, y0=1:n, lwd=3)
+}
+par(mfrow=c(1,2))
+coefplot(fit.open, main="Opened")
+abline(v=0, col=2, lty=2)
+coefplot(fit.clicks, main="Clicks")
+abline(v=0, col=2, lty=2)
+
+
+
+
+```
+
+\newpage
+
+```{r, echo=FALSE, message=FALSE, fig.width=9, fig.cap="Relationship between competitors and unique visits."}
+read.csv("../Data/HeroX Challenge Data_Daily_10Aug16.csv") -> dat
+# head(dat)
+# 
+# # 20 challenges
+# table(dat$challenge)
+# table(dat$challenge.type)
+competitors <- tapply(dat$rolling.comp, dat$challenge, tail, n=1) 
+submissions <- tapply(dat$rolling.sub, dat$challenge, tail, n=1) 
+unique.views <- tapply(dat$unique.views, dat$challenge, tail, n=1) 
+prizes <- tapply(dat$prize, dat$challenge, tail, n=1) 
+
+# # Views and competitors
+plot(log(unique.views), log(competitors), bty='n', xaxt="n",yaxt='n')
+text(log(unique.views), log(competitors), names(competitors), pos=sample(4, length(competitors), replace=TRUE), xpd=TRUE, col=2)
+axis(1, at=log(unique.views), unique.views)
+axis(2, at=log(competitors), competitors)
+abline(ols <- lm(log(competitors) ~ log(unique.views), subset=competitors>0))
+lab <- sprintf("E[comp] = exp(%0.2f + %0.2f * log(views))", coef(ols)[1], coef(ols)[2])
+mtext(lab, 3)
+```
+
+
+```{r, echo=FALSE, message=FALSE, fig.width=9, fig.cap="Relationship between prize pool and unique visits."}
+# Prizes and views
+plot(log(prizes), log(unique.views), bty='n', xaxt="n", yaxt="n")
+text(log(prizes), log(unique.views), names(unique.views), pos=sample(4, length(unique.views), replace=TRUE), xpd=TRUE, col=2)
+axis(1, at=log(prizes), prizes)
+axis(2, at=log(unique.views), unique.views)
+abline(ols <- lm(log(unique.views) ~ log(prizes), subset=competitors>0), lwd=2)
+lab <- sprintf("E[views] = exp(%0.2f + %0.2f * log(prize))", coef(ols)[1], coef(ols)[2])
+legend("top", lty=1, lab, bty="n")
+```

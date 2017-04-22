@@ -1,0 +1,63 @@
+% Survey HeroX
+% Preliminary data analysis
+% This version: \today
+
+```{r setup, echo=FALSE}
+load("../survey.RData")
+strnl <- function(x) {
+	paste(strwrap(as.character(x),70), collapse="\n")
+}
+```
+
+```{r, echo=FALSE}
+respondents <- nrow(survey)
+sprintf("Survey respondents=%i", respondents)
+sprintf("%0.0f percent of target (target=150)", respondents/1.50 )
+sprintf("%0.0f percent of respodents over solicited (solicited=3,154)", respondents/31.54)
+```
+
+
+```{r, echo=TRUE, fig.width=9}
+attach(survey)
+
+# Age
+pie(table(QID3), main=questions["QID3"])
+
+# Gender
+pie(table(QID4), main=questions["QID4"])
+
+# Country
+pie(table(QID5), main=questions["QID5"])
+
+# Education
+pie(table(Q22), main=questions["Q22"])
+
+# Employment
+pie(table(Q23), main=questions["Q23"])
+
+# Motivations
+pie(table(QID6), main=questions["QID6"])
+
+# Competitive
+pie(table(QID7), main=questions["QID7"])
+
+# Teams
+pie(table(QID8), main=questions["QID8"])
+pie(table(QID9), main=strnl(questions["QID9"]))
+
+# Teams composition
+pie(table(Q13), main=strnl(questions["Q13"]))
+pie(table(Q15), main=strnl(questions["Q15"]))
+pie(table(Q16), main=strnl(questions["Q16"]))
+
+# pie(table(Q17), main=questions["Q17"])
+plot(table(Q18, QID4), main=strnl(questions["Q18"]), col=c("dodgerblue", "orange"))
+
+# Areas
+table.areas <- function(x) sort(table(unlist(strsplit(as.character(x), ","))))
+areas.list <- split(QID12, QID4)
+pie(table.areas(areas.list$Female), main=strnl(questions["QID12"]))
+mtext("Women", 1)
+pie(table.areas(areas.list$Male), main=strnl(questions["QID12"]))
+mtext("Men", 1)
+```
