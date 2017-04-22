@@ -4,48 +4,51 @@ notes_dir=Paper_notes
 slides_dir=Slides
 now=`date +%b%d`
 report_file=report.Rmd
-notes_file=report_notes.Rmd
-slides_file=report_slides.Rmd
+
+function compile () {
+	cp -v *.RData "$2"
+	cp -vR Config/ "$2"
+	cp -v "$1" "$2"
+	cd "$2" && crmd "$1"
+}
+
 
 # Prepare data
-# mv .RData $now.RData
-# Rscript -e "source('report_prep_data.R')"
+if [ "$1" == "--data" ]; then
+	mv .RData $now.RData
+	Rscript -e "source('prep_data.R')"
+	exit
+fi
 
 if [ "$1" == "--slides" ]; then
-	cp .RData $slides_file func.R Slides/ 
-	cd Slides && crmd $slides_file
+	input=report_slides.Rmd
+	cp .RData $input func.R Slides/ 
+	cd Slides && crmd $input
 	exit
 fi
 
 if [ "$1" == "--notes" ]; then
-	cp _output.yml $notes_dir
-	cp Template/* $notes_dir/Template/
-	cp $notes_file $notes_dir
-	cd $notes_dir && crmd $notes_file
-	exit
+	compile report_notes.Rmd $notes_dir
+	exit 0
 fi
 
 if [ "$1" == "--survey" ]; then
-	cp _output.yml $notes_dir
-	cp Template/* $notes_dir/Template/
-	cp analysis_survey.Rmd $notes_dir
-	cd $notes_dir && crmd analysis_survey.Rmd
-	exit
+	compile report_survey.Rmd $notes_dir
+	exit 0
 fi
 
+if [ "$1" == "--profiles" ]; then
+	compile report_profiles.Rmd $notes_dir
+	exit 0
+fi
 
-exit 0
-
-echo "Copy files..."
-cp ~/Library/Application\ Support/BibDesk/library.bib $output_dir/
-cp _output.yml $output_dir
-cp Template/* $output_dir/Template/
-cp *.Rmd *.R .RData $output_dir
-echo "Compile paper..."
-cd $output_dir
-crmd $report_file > report.Rout 2> report.Rerr
-echo "Done!"
-
+if [ "$1" == "--paper" ]; then
+	cp ~/Library/Application\ Support/BibDesk/library.bib $output_dir/
+	cp -vR Config/ $output_dir
+	cp *.Rmd *.R .RData $output_dir
+	cd $output_dir && crmd $report_file > report.Rout 2> report.Rerr
+	exit
+fi
 
 # echo "Copy data..."
 # cp $data $output_dir/.RData 
