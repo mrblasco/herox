@@ -9,61 +9,38 @@ source("func.R")
 ```
 
 Introduction
-=============
+============
 
 Women Contribute Online Less Than Men
------------------------------- 
+--------------------------------------
 
 > - Only 13% women contributors on Wikipedia
   - Wikipedia entries about women are less likely to be complete
   - Only 5% women contributors on StackOverflow
   - Less than 5% women taking part in programming competitions (despite 30% in CS schools)
 
-
 Implications for individuals, firms & society
 ------------------------------ 
 
-**Profits** of online companies (e.g., Airbnb)
-
-+ Narrow participation $\leadsto$ lower profits
-+ Less diversity & creativity for innovation
-
-. . .
-
-**Labor market discrimination**
-
-+ Signaling skills
-+ Learning
-
-. . .
-
-**Cultural** discrimination
-
-+ Platform content may reflect biased views
+> 	- Narrow participation $\leadsto$ lower profits
+  	- Less diversity & creativity for innovation
+	- Labor market discrimination
+	- Platform content may reflect biased views
 
 
 A theory of gender imbalance
 ------------------------------ 
 
-Many factors to consider  (see Lam et. al 2011)
-
 We conjecture:
 
-- **Gamification** & Incentives (e.g., competition, points, rankings)
-- Gender differences in **preferences** (e.g., risk aversion, competitive inclination)
+> 	- **Gamification** & Incentives (e.g., competition, points, rankings)
+  	- Gender differences in **preferences** (e.g., risk aversion, competitive inclination)
 
-. . .
+Mechanisms under investigation
 
-**Mechanisms**  under investigation
-
-1. Perceived gender composition in a competitive environment.
+1. Perceived gender composition in a competitive environment
 2. \color{gray}{Collaboration incentives under gender imbalance [next study]}
 
-
-The role of the perceived gender imbalance
-==========================================
-
-<!-- Why the perceived gender imbalance matters?   -->
 
 Bayesian updating
 -----------------
@@ -85,17 +62,17 @@ Role model
 ![American Economic Review, 2000](aer-citation.png)
 
 
-Context and Data
-================
+Context and Data (HeroX.com)
+===========================
 
 ```{r stats, echo=FALSE} 
-g <- table(df$Gender, ifelse(df$Num.challenges>0, "Contrib", "Not"))
+g <- table(herox$Gender, ifelse(herox$Num.challenges>0, "Contrib", "Not"))
 sex.ratio <- round(apply(g, 1, sum)["male"] / apply(g, 1, sum)["female"])
 sex.ratio.contrib <- round(g["male","Contrib"] / g["female","Contrib"])
 ```
 
-Herox.com 
-------------
+Gender participation in Herox.com 
+----------------------------------
 
 The sex ratio is:
 
@@ -108,7 +85,7 @@ The sex ratio is:
 
 ```{r bayes, echo=FALSE, fig.cap="Proportion of women members by country"}
 ###### BAYES ##########################
-dat <- subset(df, !is.na(Gender) & !is.na(Country))
+dat <- subset(herox, !is.na(Gender) & !is.na(Country))
 n <- tapply(dat$Gender, dat$Country, length)
 top.countries <- names(tail(sort(n), 10))
 agg <- data.frame(table(Gender=dat$Gender, Country=dat$Country))
@@ -139,11 +116,10 @@ sapply(1:10, function(x) {
 mtext("Proportion women", 2, 3)
 ```
 
-
 ----
 
 ```{r overtime, echo=FALSE, fig.cap="Proportion of women new members over time"}
-dat <- subset(df, !is.na(Gender) & !is.na(Country))
+dat <- subset(herox, !is.na(Gender) & !is.na(Country))
 dat[order(dat$Registration.date), ] -> dat
 
 # Limit dates
@@ -170,7 +146,7 @@ grid(nx=NA, ny=NULL)
 ---
 
 ```{r cumsum, echo=FALSE, fig.cap="Cumulative proportion of women over time"}
-dat <- subset(df, !is.na(Gender) & !is.na(Country) & difftime(Registration.date,"2014-01-01")>0)
+dat <- subset(herox, !is.na(Gender) & !is.na(Country) & difftime(Registration.date,"2014-01-01")>0)
 dat[order(dat$Registration.date), ] -> dat
 female <- dat$Gender=='female'
 female.active <- dat$Gender=='female' & dat$Num.challenges>0
@@ -190,33 +166,84 @@ text(dat$Registration.date[n], female.pc[n], "Registered", 1, xpd=T)
 Experimental design
 ===================
 
-How to influence the perceived gender composition?
----------------------------------------------------
+Winning members as "Role models"
+-----------
 
-Featuring 2-3 member profiles.
-
-- experience + bio + profile picture
-
-- ADD regression controls for past experience on platform
-
-Example of HeroX's member
-------------------------
-
-\includegraphics[width=1.0in]{jessica.png}
-
-> Jessica is currently wrapping up as a graduate student at Stanford. She led youth engagement at D-Lab at the Massachusetts Institute of Technology, which collaborates with communities facing economic poverty to design technologies to improve quality of life. She co-founded a social enterprise based in West Bengal, India that aims to increase access to clean drinking water through affordable community chlorination devices.
+![Example of 6 recruited members](herox_headshots-01.png)
 
 
-Whom to influence?
+Randomized intervention
 -----------------
 
-Registered members (increase participation)
+Send solicitation with $k$ role models to $60K$ HeroX members
 
-- Direct solicitation email
+\[
+	\text{possible combinations} = \binom{m + f}{k} 
+\]
 
-Not yet registered members (foster registration & participation)
+### Example ($k=2$, $m=8$ and $f=8$)
 
-- Mailing lists, Facebook ads, etc. (can we track?)
+$16! / (14! 2!) = 16 * 15 / 2 = 120$ possible combinations $\leadsto$ $60000/120=500$ subjects per combination
+
+### Example ($k=3$ $m=6$ and $f=6$)
+
+$12! / (9! * 3!) = 12 * 11 * 10 / 6 = 220$ possible combinations $\leadsto$ $\approx 270$ subjects per combination.
+
+How to pick $m$, $f$, and $k$?
+------------------------------
+
+- Recruited 19 profiles (11 men and 8 women)
+
+- Examined and scored each profile according to:
+	* Physical attractiveness
+	* Perceived age
+	* Perceived ethnicity
+	* "Role model"
+
+- Select $f$ and $m$ such that scores are balanced
+
+- Select $k$ that gives high power
+
+The problem of causality
+------------------------
+
+### What we identify?
+
+- "Causal effects" for (1) individuals & (2) profile combinations
+
+- Further assumptions needed for **interactions** (e.g., same gender, ethnicity)  and **gender composition** [best we can do without "lying"]
+
+### Which "causal effects"?
+
+- Intention-To-Treat (ITT) which ignores anything that happens after randomization.
+
+- Complier Average Causal Effect (CACE) which considers the effect on those who comply (i.e., who open their emails)
+
+
+Data analysis
+------------------------
+
+Let $Y(W)$ be the outcome given the assignment $W$ that is 1 when there are same-something role models (e.g., gender, ethnicity).
+
+The ITT can be estimated with
+\[
+	E[Y(1)] - E[Y(0)] = \sum \frac{y_{i1}}{n_1} - \sum \frac{y_{i0}}{n_0}
+\]
+
+One possible limitation of ITT estimation is that gender may be correlated with other observable or unobservable characteristics
+
+
+Regression analysis
+--------------------
+
+To control for confounding factors, we use the following model:
+\[
+	Y_{ij} = \alpha_i + \beta_j + \sum_{k=1}^K \gamma_k\text{SameEthnic}_{ijk} + \sum_{k=1}^K\delta_k\text{SameSex}_{ijk} + e_{ij}
+\]
+for $i$ subject and $j$ combination of $k=1,2,..., K$ role models.
+
+When $\gamma_k=\gamma$ or $\delta_k=\delta$ for all $k$, only the count of same-somthing matters!
+
 
 
 Example email solicitation
@@ -235,8 +262,7 @@ Treatment
 x <- c("3 women","1 man 2 women", "2 men 1 woman", "3 men")
 y <- c("1 man role model", "1 woman role model")
 
-print(xtable(expand.grid(y, x), caption="Treatment combinations")
-	, comment=FALSE, booktabs=FALSE)
+print(xtable(expand.grid(y, x), caption="Treatment combinations"), comment=FALSE, booktabs=FALSE)
 ```
 
 Facebook/Twitter ads

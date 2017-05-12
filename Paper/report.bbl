@@ -1,15 +1,93 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Bohnet et~al.(2015)Bohnet, Van~Geen, and
+  Bazerman]{bohnet2015performance}
+I.~Bohnet, A.~Van~Geen, and M.~Bazerman.
+\newblock When performance trumps gender bias: Joint vs. separate evaluation.
+\newblock \emph{Management Science}, 62\penalty0 (5):\penalty0 1225--1234,
+  2015.
+
+\bibitem[Carrell et~al.(2010)Carrell, Page, and West]{carrell2010sex}
+S.~E. Carrell, M.~E. Page, and J.~E. West.
+\newblock Sex and science: How professor gender perpetuates the gender gap.
+\newblock \emph{The Quarterly Journal of Economics}, 125\penalty0 (3):\penalty0
+  1101--1144, 2010.
+
+\bibitem[Charness and Rustichini(2011)]{charness2011gender}
+G.~Charness and A.~Rustichini.
+\newblock Gender differences in cooperation with group membership.
+\newblock \emph{Games and Economic Behavior}, 72\penalty0 (1):\penalty0 77--85,
+  2011.
+
+\bibitem[Cheryan et~al.(2013)Cheryan, Drury, and
+  Vichayapai]{cheryan2013enduring}
+S.~Cheryan, B.~J. Drury, and M.~Vichayapai.
+\newblock Enduring influence of stereotypical computer science role models on
+  women's academic aspirations.
+\newblock \emph{Psychology of Women Quarterly}, 37\penalty0 (1):\penalty0
+  72--79, 2013.
+
+\bibitem[De~Paola and Scoppa(2015)]{de2015gender}
+M.~De~Paola and V.~Scoppa.
+\newblock Gender discrimination and evaluators' gender: evidence from italian
+  academia.
+\newblock \emph{Economica}, 82\penalty0 (325):\penalty0 162--188, 2015.
+
+\bibitem[Dee(2004)]{dee2004teachers}
+T.~S. Dee.
+\newblock Teachers, race, and student achievement in a randomized experiment.
+\newblock \emph{Review of Economics and Statistics}, 86\penalty0 (1):\penalty0
+  195--210, 2004.
+
+\bibitem[Gilbert(1985)]{gilbert1985dimensions}
+L.~A. Gilbert.
+\newblock Dimensions of same-gender student-faculty role-model relationships.
+\newblock \emph{Sex Roles}, 12\penalty0 (1):\penalty0 111--123, 1985.
+
+\bibitem[Glynn and Sen(2015)]{glynn2015identifying}
+A.~N. Glynn and M.~Sen.
+\newblock Identifying judicial empathy: Does having daughters cause judges to
+  rule for women's issues?
+\newblock \emph{American Journal of Political Science}, 59\penalty0
+  (1):\penalty0 37--54, 2015.
+
 \bibitem[Hill and Shaw(2013)]{hill2013wikipedia}
 B.~M. Hill and A.~Shaw.
 \newblock The wikipedia gender gap revisited: characterizing survey response
   bias with propensity score estimation.
 \newblock \emph{PloS one}, 8\penalty0 (6):\penalty0 e65782, 2013.
+
+\bibitem[Latu et~al.(2013)Latu, Mast, Lammers, and Bombari]{latu2013successful}
+I.~M. Latu, M.~S. Mast, J.~Lammers, and D.~Bombari.
+\newblock Successful female leaders empower women's behavior in leadership
+  tasks.
+\newblock \emph{Journal of Experimental Social Psychology}, 49\penalty0
+  (3):\penalty0 444--448, 2013.
+
+\bibitem[Lyle(2007)]{lyle2007estimating}
+D.~S. Lyle.
+\newblock Estimating and interpreting peer and role model effects from randomly
+  assigned social groups at west point.
+\newblock \emph{The Review of Economics and Statistics}, 89\penalty0
+  (2):\penalty0 289--299, 2007.
+
+\bibitem[Marx and Ko(2012)]{marx2012superstars}
+D.~M. Marx and S.~J. Ko.
+\newblock Superstars ``like'' me: The effect of role model similarity on
+  performance under threat.
+\newblock \emph{European Journal of Social Psychology}, 42\penalty0
+  (7):\penalty0 807--812, 2012.
+
+\bibitem[Marx and Roman(2002)]{marx2002female}
+D.~M. Marx and J.~S. Roman.
+\newblock Female role models: Protecting women's math test performance.
+\newblock \emph{Personality and Social Psychology Bulletin}, 28\penalty0
+  (9):\penalty0 1183--1193, 2002.
 
 \bibitem[Reagle and Rhue(2011)]{reagle2011gender}
 J.~Reagle and L.~Rhue.

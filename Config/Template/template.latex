@@ -1,7 +1,6 @@
 \documentclass[12pt, titlepage]{$documentclass$}
 \usepackage{beamerarticle}
 \usepackage[utf8]{inputenc}
-\usepackage{hyperref}
 \usepackage{amssymb,amsmath}
 
 % Page settings
@@ -19,6 +18,13 @@
 %\usepackage{lineno}
 %\linenumbers
 
+% Links
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=false,% hyperlinks will be black
+  linkbordercolor=red,% hyperlink borders will be red
+  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
 
 % Tables
 \usepackage{array,booktabs,longtable,rotating}

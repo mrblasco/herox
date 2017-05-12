@@ -1,0 +1,73 @@
+
+Introduction
+============
+
+Though the proportion of Internet users is nearly the same across the genders, researchers have found significant gender imbalances in online behavior:
+
+
+- Only 13 percent of Wikipedia contributors are women [@hill2013wikipedia];
+- Wikipedia articles on women are more likely to be missing than are articles on men relative to Britannica [@reagle2011gender];
+- Less than 5 percent of StackOverflow users answering technical questions are women [@vasilescu2012gender];
+- Women make a small fraction of people going to hackathons or taking part in online competitions on crowdsourcing platforms (Innocentive, TopCoder, Kaggle).
+
+The reasons behind this gender gap are not fully understood. It is clear that it is not due to discriminatory rules put in place on these platforms. Rather the culprit seems to be a mix of psychological motivations and institutional characteristics of the platforms that might have inadvertently promoted an imbalance.
+
+We conjecture that an important mechanism of imbalance could be the combination of
+
+1. Gamification & incentives
+2. Differences in preferences between the genders
+
+Online platforms use elements of game play to engage their members (rankings, game points, competition with others, etc.) and stimulate higher levels of user activity. If men and women have different inclinations towards these incentives, they might inadvertently stimulate an imbalanced participation.
+
+
+Literature
+===========
+
+Gender composition
+------------------
+
+@charness2011gender finds that males cooperate less often when observed by groups of peers of the same gender, while females cooperate more often. (Possible interpretation: males and females want to signal different "skills" to their peers). 
+
+
+@de2015gender shows evidence of gender discrimination in committees for haring academics in Italy. Mixed-gender committees are less likely xxx.
+
+Role models
+------------
+
+According to the Oxford dictionary, a "role model" is a person "whose behaviour, attitudes, and/or values are seen by individuals as worthy of imitation or emulation." In economics, role models are a special case of "externality." It is also related with the notion of "peer effects," as effects xxx. Although by looking at what defines a peer, a role model may not fall in this definition.
+
+Theory. See Durlauf, Bisin, Verdie, Young, etc. Transmission of values.
+
+### Education
+
+@carrell2010sex Air Force Academy study
+
+@lyle2007estimating examines a natural experiment at West Point and finds a positive effect of senior cadets' specialization on junior's future decisions about specialization. 
+
+For @gilbert1985dimensions, female students give relatively more importance to their role-model relationships to their professional development than male students. [Why so?]
+
+@dee2004teachers examines the role of teachers [results TBA]
+
+### Computer science
+
+@cheryan2013enduring finds that seemingly small interventions, such as changing decorations in CS room at school/university, can have an impact on women's careers in CS.
+
+### Women
+
+@marx2002female finds that female experimenters administering a math test can have a positive impact on women's performance in the test. Likewise, @latu2013successful finds that even a subtle exposure to pictures of highly successful female role models (such as Hillary Clinton or Angela Merkel) can have a positive impact on women's behavior.
+
+
+@glynn2015identifying finds that having daughters affects judges decisions.
+
+
+@marx2012superstars argues that role model effectiveness can be enhanced via increasing similarity among in-group role models. [Notes: in psychology, similarity is i) shared identity e.g., gender, race ii) shared attributes, e.g., backgrounds, interests]
+
+[@marx2012superstars p. 809] have three questions with 1 to 7 scales 
+1. "How similar do you perceive the candidate to be to you?"
+2. "How competent do you think the candidate is in math?"
+3. “The candidate is inspirational for me.”
+	 
+### Evaluations
+
+@bohnet2015performance
+

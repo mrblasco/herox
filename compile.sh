@@ -1,24 +1,88 @@
 #!/bin/bash
-output_dir=Paper
-notes_dir=Paper_notes
-slides_dir=Slides
-now=`date +%b%d`
-report_file=report.Rmd
+# Andrea Blasco <ablasco@fas.harvard.edu>
+#***********************************************#
+E_BADDIR=85 # Error bad directory
+E_BADFILE=86 # Error bad file
 
-function compile () {
-	cp -v *.RData "$2"
-	cp -vR Config/ "$2"
-	cp -v "$1" "$2"
-	cd "$2" && crmd "$1"
+input_file=$1
+
+if [ ! -f "$input_file" ] # Check input file
+then
+	echo "$input_file file not found!"
+	exit $E_BADFILE
+fi	
+
+#***********************************************#
+bib_file="$HOME/Library/Application Support/BibDesk/library.bib"
+config_dir=${3:-Config}
+output_dir=${2:-Paper}
+#***********************************************#
+
+if [ ! -d "$output_dir" ] || [ ! -d "$config_dir" ] # Check
+then
+	echo "$1 or $2 is not a directory."
+	exit $E_BADDIR
+fi
+
+
+# --------------------------------------------------------- #
+# copy_data ()                                         		#
+# Copy all files in designated directory.                	#
+# Parameters: $target_directory, $config_dir                #
+# Returns: 0 on success, $E_BADDIR if something went wrong. #
+# --------------------------------------------------------- #
+copy_data () {
+	cp -v "$bib_file" "$1"
+	cp -v .RData "$1"
+	cp -vR "$2"/* "$1"
+	cp -v *.R *.Rmd "$1"
+	return 0
+}
+clean_dir () {
+	rm -r "$1"/*
+	return 0
 }
 
+# Compile report
+# clean_dir $output_dir
+copy_data $output_dir $config_dir
+cd $output_dir
+Rscript -e "rmarkdown::render('$input_file')"
+mkdir Code && mv *.Rmd Code
 
-# Prepare data
+# Open document
+open -a Skim ${input_file%.*}.pdf
+
+exit 0
+
+
+#***********************************************#
 if [ "$1" == "--data" ]; then
-	mv .RData $now.RData
+	mv .RData $data_dir/$now.RData
 	Rscript -e "source('prep_data.R')"
-	exit
+	exit $?
 fi
+
+if [ "$1" == "--notes" ]; then
+	clean_dir $notes_dir
+	copy_data $notes_dir $config_dir
+	cd $notes_dir && compile report_notes.Rmd
+	exit $?
+fi
+
+
+if [ "$1" == "--paper" ]; then
+	clean_dir $paper_dir
+	copy_data  $paper_dir $config_dir
+	cd $notes_dir && compile report_notes.Rmd
+	exit $?
+fi
+
+if [ "$1" == "--profiles" ]; then
+	Rscript prep_data_profiles.R > Data/Profiles/qualtrics_advformat_profiles.txt
+	exit 0
+fi
+
 
 if [ "$1" == "--slides" ]; then
 	input=report_slides.Rmd
@@ -27,28 +91,12 @@ if [ "$1" == "--slides" ]; then
 	exit
 fi
 
-if [ "$1" == "--notes" ]; then
-	compile report_notes.Rmd $notes_dir
-	exit 0
-fi
-
 if [ "$1" == "--survey" ]; then
 	compile report_survey.Rmd $notes_dir
 	exit 0
 fi
 
-if [ "$1" == "--profiles" ]; then
-	compile report_profiles.Rmd $notes_dir
-	exit 0
-fi
 
-if [ "$1" == "--paper" ]; then
-	cp ~/Library/Application\ Support/BibDesk/library.bib $output_dir/
-	cp -vR Config/ $output_dir
-	cp *.Rmd *.R .RData $output_dir
-	cd $output_dir && crmd $report_file > report.Rout 2> report.Rerr
-	exit
-fi
 
 # echo "Copy data..."
 # cp $data $output_dir/.RData 

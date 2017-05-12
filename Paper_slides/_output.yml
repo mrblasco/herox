@@ -1,0 +1,11 @@
+beamer_presentation:
+    keep_tex: true 
+    toc: true
+    incremental: false
+#    theme: "AnnArbor"
+#    colortheme: "dolphin"
+#    fonttheme: "structurebold"
+    slide_level: 2
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true

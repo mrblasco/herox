@@ -1,7 +1,6 @@
 \documentclass[12pt, titlepage]{article}
 \usepackage{beamerarticle}
 \usepackage[utf8]{inputenc}
-\usepackage{hyperref}
 \usepackage{amssymb,amsmath}
 
 % Page settings
@@ -19,6 +18,13 @@
 %\usepackage{lineno}
 %\linenumbers
 
+% Links
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=false,% hyperlinks will be black
+  linkbordercolor=red,% hyperlink borders will be red
+  pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+}
 
 % Tables
 \usepackage{array,booktabs,longtable,rotating}
@@ -79,7 +85,7 @@ Cambridge Street, Cambridge, MA 02138 (email:
 \href{mailto:mmenietti@fas.harvard.edu}{\nolinkurl{mmenietti@fas.harvard.edu}}).
 We gratefully acknowledge the financial support of XXXX.}}
 \author{Andrea Blasco \and Karim R. Lakhani \and Michael Menietti}
-\date{Last updated: 13 April, 2017}
+\date{Last updated: 09 May, 2017}
 
 \begin{document}
 \maketitle
@@ -147,6 +153,76 @@ higher levels of user activity. If men and women have different
 inclinations towards these incentives, they might inadvertently
 stimulate an imbalanced participation.
 
+\section{Literature}\label{literature}
+
+\subsection{Gender composition}\label{gender-composition}
+
+\citet{charness2011gender} finds that males cooperate less often when
+observed by groups of peers of the same gender, while females cooperate
+more often. (Possible interpretation: males and females want to signal
+different ``skills'' to their peers).
+
+\citet{de2015gender} shows evidence of gender discrimination in
+committees for haring academics in Italy. Mixed-gender committees are
+less likely xxx.
+
+\subsection{Role models}\label{role-models}
+
+According to the Oxford dictionary, a ``role model'' is a person ``whose
+behaviour, attitudes, and/or values are seen by individuals as worthy of
+imitation or emulation.'' In economics, role models are a special case
+of ``externality.'' It is also related with the notion of ``peer
+effects,'' as effects xxx. Although by looking at what defines a peer, a
+role model may not fall in this definition.
+
+Theory. See Durlauf, Bisin, Verdie, Young, etc. Transmission of values.
+
+\subsubsection{Education}\label{education}
+
+\citet{carrell2010sex} Air Force Academy study
+
+\citet{lyle2007estimating} examines a natural experiment at West Point
+and finds a positive effect of senior cadets' specialization on junior's
+future decisions about specialization.
+
+For \citet{gilbert1985dimensions}, female students give relatively more
+importance to their role-model relationships to their professional
+development than male students. {[}Why so?{]}
+
+\citet{dee2004teachers} examines the role of teachers {[}results TBA{]}
+
+\subsubsection{Computer science}\label{computer-science}
+
+\citet{cheryan2013enduring} finds that seemingly small interventions,
+such as changing decorations in CS room at school/university, can have
+an impact on women's careers in CS.
+
+\subsubsection{Women}\label{women}
+
+\citet{marx2002female} finds that female experimenters administering a
+math test can have a positive impact on women's performance in the test.
+Likewise, \citet{latu2013successful} finds that even a subtle exposure
+to pictures of highly successful female role models (such as Hillary
+Clinton or Angela Merkel) can have a positive impact on women's
+behavior.
+
+\citet{glynn2015identifying} finds that having daughters affects judges
+decisions.
+
+\citet{marx2012superstars} argues that role model effectiveness can be
+enhanced via increasing similarity among in-group role models. {[}Notes:
+in psychology, similarity is i) shared identity e.g., gender, race ii)
+shared attributes, e.g., backgrounds, interests{]}
+
+\citep[ p.~809]{marx2012superstars} have three questions with 1 to 7
+scales 1. ``How similar do you perceive the candidate to be to you?'' 2.
+``How competent do you think the candidate is in math?'' 3. ``The
+candidate is inspirational for me.''
+
+\subsubsection{Evaluations}\label{evaluations}
+
+\citet{bohnet2015performance}
+
 \section{Experimental design}\label{experimental-design}
 
 \subsection{Profiles selection}\label{profiles-selection}
@@ -199,20 +275,6 @@ AER Registration
 
 \subsection{Power simulations}\label{power-simulations}
 
-\begin{figure}
-\centering
-\includegraphics{Figures/unnamed-chunk-6-1.pdf}
-\caption{Power simulations. Relationship between simulated statistical
-power (y-axis) and group size (x-axis). Data are simulated from a
-binomial model with varying probability of success for subjects in
-treatment and control groups; Effect size is the difference in
-probability of success between control and treatment groups which is
-reported at the bottom of each picture; Next to each curve we have
-reported the corresponding probability of success in the control group.
-Significance computed using Chi-square test statistics with
-\(\alpha=0.05\). We used 20 simulations for each instance.}
-\end{figure}
-
 \subsection{Context}\label{context}
 
 We designed two interventions in collaboration with HeroX.com, a
@@ -222,6 +284,27 @@ submissions are awarded a cash prize) and collaborative environment,
 respectively.
 
 \subsection{Data}\label{data}
+
+\subsection{Creating role-model
+profiles}\label{creating-role-model-profiles}
+
+The challenge is to make realisitic role models and xxx. We recruit 19
+members who have won a previous challenge: 9 men and 10 women.
+
+We begin with bio descriptions provided by each of these members. We
+restrict to people with a high quality profile description that xxxx
+represantitive and a profile picture that can be used to xxxx (on this
+basis we exclude 9 profiles).
+
+We create high quality and low quality pool of bios. The choice of names
+is crucial to the experiment. Bertrand and Mullainathan: - tabulate
+historical names by race - they used survey to validate their choices
+
+\begin{itemize}
+\tightlist
+\item
+  High-low quality and Names
+\end{itemize}
 
 \renewcommand\refname{References}
 \bibliography{library.bib}

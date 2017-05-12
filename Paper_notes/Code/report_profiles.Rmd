@@ -1,0 +1,11 @@
+% Recruiting Profiles on HeroX
+% This version: \today
+
+```{r setup}
+rm(list=ls())
+load("profiles.RData")
+```
+
+```{r, results='asis'}
+write.table(iconv(profiles$Q3[-3], to="UTF-8"), quote=FALSE, col.names=FALSE, eol='\n\n\n\n')
+```
